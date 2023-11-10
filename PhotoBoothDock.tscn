@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3vay2a2ierhd"]
+
+[ext_resource type="Script" path="res://addons/PhotoBooth/PhotoBoothDock.gd" id="1_dulgj"]
+
+[node name="PhotoBooth" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dulgj")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Open PhotoBooth"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
