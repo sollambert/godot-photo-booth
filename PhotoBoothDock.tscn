@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b3vay2a2ierhd"]
 
-[ext_resource type="Script" path="res://addons/PhotoBooth/PhotoBoothDock.gd" id="1_dulgj"]
+[ext_resource type="Script" path="res://addons/godot-photo-booth/PhotoBoothDock.gd" id="1_dulgj"]
 
 [node name="PhotoBooth" type="Control"]
 layout_mode = 3

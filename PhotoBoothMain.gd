@@ -2,7 +2,7 @@
 extends EditorPlugin
 class_name PhotoBooth
 
-var dock = preload("res://addons/PhotoBooth/PhotoBoothDock.tscn").instantiate()
+var dock = preload("res://addons/godot-photo-booth/PhotoBoothDock.tscn").instantiate()
 static var editor: EditorInterface
 
 static var queue_tab_change = false
@@ -17,5 +17,5 @@ func _enter_tree():
 	editor = get_editor_interface()
 
 static func open_photo_booth():
-	editor.open_scene_from_path("res://addons/PhotoBooth/PhotoBooth.tscn")
+	editor.open_scene_from_path("res://addons/godot-photo-booth/PhotoBooth.tscn")
 	queue_tab_change = true

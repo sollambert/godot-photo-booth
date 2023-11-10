@@ -1,14 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://c64u5imbk7dt2"]
 
-[ext_resource type="Script" path="res://addons/PhotoBooth/PhotoBooth.gd" id="1_jd7g1"]
+[ext_resource type="Script" path="res://addons/godot-photo-booth/PhotoBooth.gd" id="1_jd7g1"]
 
 [node name="PhotoBooth" type="SubViewport"]
 transparent_bg = true
 script = ExtResource("1_jd7g1")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.1
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.573576, -0.288797, 0.766555, 0, 0.935791, 0.352556, -0.819152, -0.202218, 0.536748, 1.44807, 0.616, 1.01395)
-fov = 37.5
+fov = 25.0
