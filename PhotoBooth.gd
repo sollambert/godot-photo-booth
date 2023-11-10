@@ -34,12 +34,12 @@ var queue_camera_transform = false
 		camera_location = v
 		queue_camera_transform = true
 ## Rotation value for photo booth Camera3D to rotate around world origin from current position
-@export var camera_rotation: float = 30:
+@export var camera_rotation: float = -10:
 	set(v):
 		camera_rotation = v
 		queue_camera_transform = true
 ## Offset to apply to the y axis of the camera global position after all rotations and transforms are completed 
-@export var y_offset: float = 0:
+@export var y_offset: float = -0.1:
 	set(v):
 		y_offset = v
 		queue_camera_transform = true
@@ -95,14 +95,14 @@ func _process(_delta):
 
 # Sets current camera global position, rotates camera around world origin, and applies y_offset to global position
 func rotate_camera():
-	var rot = deg_to_rad(camera_rotation - 90) + camera.rotation.y
+	var rot = deg_to_rad(camera_rotation)
 	var origin = Vector3(0,0,0)
 	camera.global_translate (-origin)
 	camera.transform = camera.transform.rotated(Vector3(0,1,0), -rot)
 	camera.global_translate (origin)
-	camera.global_position.y += y_offset
 	if is_instance_valid(object):
 		camera.look_at(object.global_position)
+	camera.global_position.y += y_offset
 
 # Calculates and sets current camera FOV
 func adjust_fov():
