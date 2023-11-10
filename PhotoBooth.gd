@@ -39,7 +39,7 @@ var queue_camera_transform = false
 		camera_rotation = v
 		queue_camera_transform = true
 ## Offset to apply to the y axis of the camera global position after all rotations and transforms are completed 
-@export var y_offset: float = -0.1:
+@export var y_offset: float = -0.05:
 	set(v):
 		y_offset = v
 		queue_camera_transform = true
