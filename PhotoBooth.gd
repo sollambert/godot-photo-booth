@@ -15,12 +15,16 @@ var queue_camera_transform = false
 	set(v):
 		if destination:
 			render_thumbnail(destination)
+		else:
+			printerr("Must have destination!")
 		render = false
 ## Button for initiating a render for all objects within input path directory
 @export var render_all: bool = false:
 	set(v):
 		if input_path and destination:
 			render_all_thumbnails(input_path, destination)
+		else:
+			printerr("Must have input path and destination!")
 		render_all = false
 ## Delay for snapping a new render, can sometimes prevent issues with scene loading and allows time for engine to name instantiated node properly
 @export var render_delay: float = 0.25
