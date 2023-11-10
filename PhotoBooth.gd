@@ -126,10 +126,11 @@ func render_all_thumbnails(input_path: String, destination: String):
 		var sub_dirs = dir.get_directories()
 		var files = dir.get_files()
 		for file in files:
-			scene = load(dir.get_current_dir() + "/" + file)
-			timer.start(render_delay)
-			await timer.timeout
-			render_thumbnail(destination)
+			if file.ends_with("tscn"):
+				scene = load(dir.get_current_dir() + "/" + file)
+				timer.start(render_delay)
+				await timer.timeout
+				render_thumbnail(destination)
 		for sub_dir in sub_dirs:
 			render_all_thumbnails(dir.get_current_dir() + "/" + sub_dir, destination  + sub_dir)
 		pass
